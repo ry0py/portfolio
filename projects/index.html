@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>個人製作 | Ry0py</title>
+<meta name="description" content="堀江諒の個人製作作品">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <ul>
+      <li><a href="../">ホーム</a></li>
+      <li class="has-dropdown">
+        <a href="../robot-contest/">ロボットコンテスト</a>
+        <div class="dropdown">
+          <a href="../robot-contest/nhk-robocon/">NHK学生ロボコン</a>
+          <a href="../robot-contest/catchrobo/">キャチロボコンテスト</a>
+        </div>
+      </li>
+      <li><a href="./" class="active">個人製作</a></li>
+      <li><a href="../internship/">長期インターン</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="page-title">個人製作</h1>
+    <div class="cards reveal">
+      <a class="card" href="#vr">
+        <img src="../images/proj-vr.png" alt="VRゲーム">
+        <span>VRゲーム</span>
+      </a>
+      <a class="card" href="#janken">
+        <img src="../images/proj-janken.jpg" alt="じゃんけんゲーム">
+        <span>じゃんけんゲーム</span>
+      </a>
+      <a class="card" href="#body">
+        <img src="../images/proj-body.jpg" alt="からだで操るロボット">
+        <span>からだで操るロボット</span>
+      </a>
+      <a class="card" href="#penlight">
+        <img src="../images/penlight-hand.jpg" alt="無線制御ペンライト">
+        <span>無線制御ペンライト</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="band-title" id="vr"><div class="container"><h2>VRゲーム</h2></div></div>
+  <div class="container reveal">
+    <figure style="margin-top:26px">
+      <img src="../images/vr-exhibit.jpg" alt="VRゲームの展示の様子">
+      <figcaption>展示の様子</figcaption>
+    </figure>
+
+    <h3 class="sub-title">概要</h3>
+    <ul class="dot">
+      <li>MetaQuest3を使用した射的ゲームを製作しました。作品は2024年度の東京科学大学の学園祭で展示
+        <ul>
+          <li>2日間で合計100人ほどの方にプレイしていただいた</li>
+        </ul>
+      </li>
+      <li>リピート率を向上させるために「上振れ」要素としてランダムでスコアの高い的が出るように設定</li>
+      <li>写真の見栄えを考慮して銃型のアタッチメントを作成</li>
+    </ul>
+
+    <h3 class="sub-title">使用ツール</h3>
+    <ul class="dot">
+      <li>Unityを使用したゲーム作成</li>
+      <li>Fusionを使用したアタッチメントの作成</li>
+    </ul>
+
+    <h3 class="sub-title">制作年</h3>
+    <ul class="dot">
+      <li>2024年9月～10月</li>
+    </ul>
+
+    <h3 class="sub-title">関連URL</h3>
+    <ul class="link-list">
+      <li><a href="https://github.com/ry0py/ShootingGallery" target="_blank" rel="noopener">制作したリポジトリ</a></li>
+    </ul>
+  </div>
+
+  <div class="band-title" id="janken"><div class="container"><h2>じゃんけんゲーム</h2></div></div>
+  <div class="container reveal">
+    <figure style="margin-top:26px">
+      <img src="../images/proj-janken.jpg" alt="じゃんけんゲームの展示の様子">
+      <figcaption>展示の様子</figcaption>
+    </figure>
+
+    <h3 class="sub-title">概要</h3>
+    <ul class="dot">
+      <li>グー・チョキ・パーの形をカメラで認識することでロボットが絶対に負ける手を出す</li>
+      <li>物体検出で手の形を認識してロボットに対応した手の形になるような制御を担当</li>
+      <li>実際にロボットとじゃんけんをしてる演出のために友人にハードウェアの作成を依頼</li>
+    </ul>
+
+    <h3 class="sub-title">使用ツール</h3>
+    <ul class="dot">
+      <li>Python</li>
+      <li>Yolov8を使用した物体検出</li>
+      <li>Tkinterを使用したGUI制作</li>
+      <li>FastLabelを使用したアノテーション</li>
+      <li>Arudinoを使用したロボット制御</li>
+    </ul>
+
+    <h3 class="sub-title">制作年</h3>
+    <ul class="dot">
+      <li>2023年9月～10月</li>
+    </ul>
+
+    <h3 class="sub-title">関連ＵＲＬ</h3>
+    <ul class="link-list">
+      <li><a href="https://github.com/ry0py/view_hand" target="_blank" rel="noopener">制作したリポジトリ</a></li>
+    </ul>
+  </div>
+
+  <div class="band-title" id="body"><div class="container"><h2>からだで操るロボット</h2></div></div>
+  <div class="container reveal">
+    <div class="figure-row">
+      <figure>
+        <img src="../images/proj-body.jpg" alt="二足歩行ロボット">
+        <figcaption>展示物</figcaption>
+      </figure>
+      <figure>
+        <img src="../images/body-diagram.png" alt="システム構成図">
+        <figcaption>システム構成図</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="sub-title">概要</h3>
+    <ul class="dot">
+      <li>人間の動きとリンクさせて2足歩行ロボットを動かす作品</li>
+      <li>モーションキャプチャの「Mocopi」で得られた関節位置から2足歩行ロボットのサーボモーターの角度を計算</li>
+    </ul>
+
+    <h3 class="sub-title">使用ツール</h3>
+    <ul class="dot">
+      <li>Pythonを用いたロボット制御とUnityとの通信</li>
+      <li>Unityを用いて公式のスマホアプリからの骨格位置を取得</li>
+    </ul>
+
+    <h3 class="sub-title">制作年</h3>
+    <ul class="dot">
+      <li>2025年9月～10月</li>
+    </ul>
+
+    <h3 class="sub-title">関連ＵＲＬ</h3>
+    <ul class="link-list">
+      <li><a href="https://github.com/ry0py/kxr_motion_capture" target="_blank" rel="noopener">ロボットを動かすリポジトリ</a></li>
+      <li><a href="https://github.com/ry0py/MocpiHumanoidRobot" target="_blank" rel="noopener">Mocopiのデータを取得するリポジトリ</a></li>
+    </ul>
+  </div>
+
+  <div class="band-title" id="penlight"><div class="container"><h2>無線制御ペンライト</h2></div></div>
+  <div class="container reveal">
+    <div class="figure-row">
+      <figure>
+        <img src="../images/penlight-hand.jpg" alt="無線制御ペンライト">
+      </figure>
+      <figure>
+        <img src="../images/penlight-board.jpg" alt="作成した基板">
+        <figcaption>作成した基板</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="sub-title">概要</h3>
+    <ul class="dot">
+      <li>BLE(Bluetooth Low Energy)を使用して無線で光の色を制御できるペンライトを製作</li>
+      <li>単三電池1本で動作できること、持ち手の部分に合うようなサイズとなるように基板を自作</li>
+    </ul>
+
+    <h3 class="sub-title">使用ツール</h3>
+    <ul class="dot">
+      <li>KiCadを使用して基板を製作</li>
+      <li>Fusionを使用してペンライトを製作</li>
+      <li>ESPを2つ使用したLEDの制御とBLE機能の実装</li>
+    </ul>
+
+    <h3 class="sub-title">制作年</h3>
+    <ul class="dot">
+      <li>2025年11月～12月</li>
+    </ul>
+  </div>
+
+  <div class="band-title"><div class="container"><h2>その他</h2></div></div>
+  <div class="container reveal">
+    <div class="figure-row" style="align-items:start">
+      <div>
+        <h3 class="sub-title">鳥ゲーム</h3>
+        <p>鳥を操作して得点を競うゲーム（<a href="https://github.com/ry0py/bird_game_unity" target="_blank" rel="noopener">リポジトリ</a>）</p>
+      </div>
+      <div>
+        <h3 class="sub-title">LINE Bot</h3>
+        <p>LINE Botからエアコンを操作（<a href="https://github.com/ry0py/ac_master" target="_blank" rel="noopener">リポジトリ</a>）</p>
+        <figure>
+          <img src="../images/line-bot.png" alt="LINE Botのシステム構成図">
+        </figure>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <a class="gh-link" href="https://github.com/ry0py" target="_blank" rel="noopener" aria-label="GitHub">
+    <img src="../images/github.svg" alt="GitHub">
+  </a>
+</footer>
+
+<script src="../script.js"></script>
+</body>
+</html>
