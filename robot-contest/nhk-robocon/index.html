@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NHK学生ロボコン | Ry0py</title>
+<meta name="description" content="NHK学生ロボコンでの活動内容">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <ul>
+      <li><a href="../../">ホーム</a></li>
+      <li class="has-dropdown">
+        <a href="../" class="active">ロボットコンテスト</a>
+        <div class="dropdown">
+          <a href="./">NHK学生ロボコン</a>
+          <a href="../catchrobo/">キャチロボコンテスト</a>
+        </div>
+      </li>
+      <li><a href="../../projects/">個人製作</a></li>
+      <li><a href="../../internship/">長期インターン</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="page-title">活動内容</h1>
+    <p class="page-note">※サークルで作成したコードはお見せできません。ご了承ください</p>
+  </div>
+
+  <section class="detail reveal">
+    <div class="container detail-inner">
+      <div>
+        <h3>軌道生成プログラムを作成</h3>
+        <ul class="dot">
+          <li>開発背景は制御をROS2に使用したことで前年度まで使用していた軌道生成のプログラムを使用できなくなったこと、2024年度のルールでは全自動が要求されていたことが挙げられる</li>
+          <li>始点・終点・経由点の座標と速度およびロボットの基本情報を指定することで時間最適化問題の制約条件を設定して時間に対応した位置・速度・加速度という軌道を求められるツール</li>
+          <li>非線形最適化問題設定は直接コロケーション法という各離散化点での状態方程式の成立を制約条件と追加する手法を採用</li>
+          <li>コロケーション点はルジャンドル関数の停留点を採用</li>
+          <li>状態方程式の近似はラグランジュ補完多項式を採用</li>
+          <li>データはJSON形式で出力をしてファイルに保存することが可能</li>
+          <li>GUIはPyQtを用いて作成</li>
+          <li>時間最適化問題の設定と解を求めるのはPythonライブラリのCasadiを使用</li>
+          <li>軌道生成時の動画は<a href="https://www.youtube.com/watch?v=YREs8521fbw" target="_blank" rel="noopener">こちら</a></li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../../images/trajectory.png" alt="作成した軌道生成ツール">
+        <figcaption>作成したツールの見た目</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="detail reveal">
+    <div class="container detail-inner">
+      <div>
+        <h3>ROS2を使用した制御</h3>
+        <ul class="dot">
+          <li>導入背景は前年度までは自作ライブラリを採用していたがコロナ明け以降メンテナンスが不十分であることが多く、これらの問題を解決するためにROS2を導入</li>
+          <li>ROS2というロボット開発のために必要なツール群をまとめたミドルウェアとros2_controlというROS2を使用したロボット実機を制御するためのフレームワークを使用したプログラム作成</li>
+          <li>BT(Behaviour Tree)を使用したロボット一連の動きの制御</li>
+          <li>実装はC++およびPythonを使用</li>
+          <li>軌道最適化ツールで得られたJSONデータから実際ロボットの目標速度の指令を渡すノードを作成</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../../images/bt.png" alt="作成したビヘイビアツリー">
+        <figcaption>作成したBTの全画面</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="detail reveal">
+    <div class="container detail-inner">
+      <div>
+        <h3>マネジメント</h3>
+        <ul class="dot">
+          <li>背景は前年度の敗因を分析した結果、課題は技術力だけでなくタスクの不透明さやコミュニケーション不足だと判明したことである</li>
+          <li>解決策としてメンバーと相談したうえでプロジェクトの開発体制にスクラム開発を導入</li>
+          <li>予算不足の問題を解決するためにスポンサーを新たに一つ獲得</li>
+          <li>チーム間でのモチベーションの差を埋めるために定期的な目標として以下のことを行った
+            <ul>
+              <li>他校との練習試合</li>
+              <li>年1度のOBへの報告会を2度開催</li>
+            </ul>
+          </li>
+          <li>蔵前工業会（東工大同窓会組織）でサークル活動についてプレゼンテーション（発表内容は<a href="https://www.kuramae.ne.jp/ifno_detail/id=67" target="_blank" rel="noopener">こちら</a>）</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../../images/kuramae.jpg" alt="蔵前工業会での発表の様子">
+        <figcaption>蔵前工業会での発表の様子</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="block reveal">
+      <h2 class="section-title" style="text-align:center">動作の様子</h2>
+      <div class="video-grid">
+        <div class="video-item">
+          <p>2023大会紹介ビデオ</p>
+          <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/Nwl_PX299YU" title="2023大会紹介ビデオ" loading="lazy" allowfullscreen></iframe></div>
+        </div>
+        <div class="video-item">
+          <p>2024大会紹介ビデオ</p>
+          <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/v74h88wwd_I" title="2024大会紹介ビデオ" loading="lazy" allowfullscreen></iframe></div>
+        </div>
+        <div class="video-item">
+          <p>2023大会本番様子</p>
+          <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/anEICdVs0SU?start=4040" title="2023大会本番様子" loading="lazy" allowfullscreen></iframe></div>
+        </div>
+        <div class="video-item">
+          <p>2024大会本番様子</p>
+          <div class="video-wrap"><iframe src="https://www.youtube-nocookie.com/embed/cPr-MIDsitw?start=6031" title="2024大会本番様子" loading="lazy" allowfullscreen></iframe></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block reveal">
+      <h2 class="section-title" style="text-align:center">関連するURL</h2>
+      <ul class="link-list">
+        <li><a href="https://official-robocon.com/history/gakusei/about/history/thirtytwo/" target="_blank" rel="noopener">NHK学生ロボコン2023 について</a></li>
+        <li><a href="https://www.titech.ac.jp/news/2023/067161" target="_blank" rel="noopener">2023年度大会出場に関する大学ニュースの記事</a></li>
+        <li><a href="https://official-robocon.com/history/gakusei/about/history/thirtythree/" target="_blank" rel="noopener">NHK学生ロボコン2024 について</a></li>
+        <li><a href="https://www.titech.ac.jp/news/2024/069769" target="_blank" rel="noopener">2024年度大会出場に関する大学ニュースの記事</a></li>
+        <li><a href="https://www.kuramae.ne.jp/ifno_detail/id=67" target="_blank" rel="noopener">蔵前工業会に対する報告会</a></li>
+        <li><a href="https://youtu.be/anEICdVs0SU?t=4040" target="_blank" rel="noopener">2023年度大会本番の様子</a></li>
+        <li><a href="https://youtu.be/Nwl_PX299YU" target="_blank" rel="noopener">2023年度大会ロボット紹介動画</a></li>
+        <li><a href="https://youtu.be/cPr-MIDsitw?t=6031" target="_blank" rel="noopener">2024年度大会本番の様子</a></li>
+        <li><a href="https://youtu.be/v74h88wwd_I" target="_blank" rel="noopener">2024年度大会ロボット紹介動画</a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <a class="gh-link" href="https://github.com/ry0py" target="_blank" rel="noopener" aria-label="GitHub">
+    <img src="../../images/github.svg" alt="GitHub">
+  </a>
+</footer>
+
+<script src="../../script.js"></script>
+</body>
+</html>
