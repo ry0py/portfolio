@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>キャチロボコンテスト | Ry0py</title>
+<meta name="description" content="キャチロボコンテストでの活動内容">
+<link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <nav>
+    <ul>
+      <li><a href="../../">ホーム</a></li>
+      <li class="has-dropdown">
+        <a href="../" class="active">ロボットコンテスト</a>
+        <div class="dropdown">
+          <a href="../nhk-robocon/">NHK学生ロボコン</a>
+          <a href="./">キャチロボコンテスト</a>
+        </div>
+      </li>
+      <li><a href="../../projects/">個人製作</a></li>
+      <li><a href="../../internship/">長期インターン</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <div class="container">
+    <h1 class="page-title">活動内容</h1>
+  </div>
+
+  <section class="detail reveal">
+    <div class="container detail-inner">
+      <div>
+        <h3>WebGUIを開発</h3>
+        <ul class="dot">
+          <li>ワークに対応したボタンを押すことで目標位置をロボットに伝達</li>
+          <li>フロントエンドはReactでバックエンドはGoを採用</li>
+          <li>Goを使ってROS2のネットワークにつなげるために<a href="https://github.com/tiiuae/rclgo" target="_blank" rel="noopener">rclgo</a>を使用</li>
+          <li>Dockerを使用して環境に依存せずアプリを起動</li>
+          <li>FrontendとBackendを切り分けるモダンな実装を心掛けた</li>
+          <li>フロントエンドはChatGPTをメインに使用してバイブコーディングで開発</li>
+          <li>実際に作成したリポジトリは<a href="https://github.com/SameSameIndustry/catchrobo_app" target="_blank" rel="noopener">こちら</a></li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../../images/catch-gui.png" alt="作成したGUI">
+        <figcaption>作成したGUIの見た目</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="detail reveal">
+    <div class="container detail-inner">
+      <div>
+        <h3>ROS2を使用した制御</h3>
+        <ul class="dot">
+          <li>NHK学生ロボコンと同様にROS2とros2_controlを使用</li>
+          <li>目標位置から5節リンクのジョイント角度を求める逆運動学を解くノードを作成（リポジトリは<a href="https://github.com/SameSameIndustry/arm_move" target="_blank" rel="noopener">こちら</a>）</li>
+          <li>各モータの角度、速度、電流をM5Stackにシリアルで流すHardWare Componentsを作成（リポジトリは<a href="https://github.com/SameSameIndustry/m5_hardware" target="_blank" rel="noopener">こちら</a>）</li>
+          <li>ros2_controlのControllersはPID ControllerとPosition Controllerを使用</li>
+          <li>ROS2およびros2 controlを使用することで既存のコントローラーを使うことができ開発効率が向上</li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../../images/rqt-graph.png" alt="ノードの関連図">
+        <figcaption>ノードの関連性の様子</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="detail reveal">
+    <div class="container detail-inner">
+      <div>
+        <h3>シミュレーション</h3>
+        <ul class="dot">
+          <li>ロボットの動作を確認するためにUnityでシミュレーション環境を作成</li>
+          <li>ROS2とのやり取りに<a href="https://github.com/RobotecAI/ros2-for-unity" target="_blank" rel="noopener">ros2-for-unity</a>を使用</li>
+          <li>ロボット実機が完成するまでの動作確認に使用</li>
+          <li>実際に作成したリポジトリは<a href="https://github.com/SameSameIndustry/catchrobo_sim" target="_blank" rel="noopener">こちら</a></li>
+        </ul>
+      </div>
+      <figure>
+        <img src="../../images/catch-sim.png" alt="Unityシミュレーション">
+        <figcaption>Unityシミュレーションの様子</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="detail reveal">
+    <div class="container detail-inner">
+      <div>
+        <h3>学園祭で展示</h3>
+        <ul class="dot">
+          <li>Nintendo SwitchのJoy-Conのジャイロ機能を使用して五節リンクの根元の角度を決定し操縦
+            <ul>
+              <li>制限角度の場合に振動させることでインタラクティブな操作体験</li>
+            </ul>
+          </li>
+          <li>開発したWebGUIをVR上に表示することでVRゴーグルからロボットを操作</li>
+        </ul>
+      </div>
+      <div></div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="block reveal">
+      <h2 class="section-title" style="text-align:center">関連するURL</h2>
+      <ul class="link-list">
+        <li><a href="https://catchrobo.net/history/202515.php" target="_blank" rel="noopener">キャチロボ公式ホームページ</a></li>
+        <li><a href="https://blog.rogiken.org/blog/2025/10/09/%E3%80%90%E3%82%AD%E3%83%A3%E3%83%81%E3%83%AD%E3%83%9C2025%E3%80%91%E6%A0%AA%E3%82%B5%E3%83%A1%E3%82%B5%E3%83%A1%E5%B7%A5%E6%A5%AD-%E3%83%AD%E3%83%9C%E3%83%83%E3%83%88%E7%B4%B9%E4%BB%8B/" target="_blank" rel="noopener">自チームのブログ</a></li>
+      </ul>
+    </section>
+  </div>
+</main>
+
+<footer class="site-footer">
+  <a class="gh-link" href="https://github.com/ry0py" target="_blank" rel="noopener" aria-label="GitHub">
+    <img src="../../images/github.svg" alt="GitHub">
+  </a>
+</footer>
+
+<script src="../../script.js"></script>
+</body>
+</html>
